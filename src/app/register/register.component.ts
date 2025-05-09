@@ -5,13 +5,14 @@ import { MatInputModule } from '@angular/material/input';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '../auth.service';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [MatCardModule,MatFormFieldModule,MatInputModule,ReactiveFormsModule,MatIconModule],
+  imports: [MatCardModule,MatFormFieldModule,MatInputModule,ReactiveFormsModule, MatIconModule,CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
