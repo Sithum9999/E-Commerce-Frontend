@@ -11,12 +11,27 @@ export const routes: Routes = [{
         component:LoginComponent
     },
     {
-        path:"register",
+        path:"signup",
         component:RegisterComponent
     },
     {
         path:"order",
         component:RegisterComponent
+    }]
+},
+{
+    path: '',
+    component: DashboardComponent, 
+    children: [
+      {
+        path: "admin/dashboard",
+        loadComponent: () =>
+          import('./admin/component/dashboard/dashboard.component').then(m => m.DashboardComponent),
+      },{
+        path: "customer/dashboard",
+        loadComponent: () =>
+          import('./customer/component/dashboard/dashboard.component').then(m => m.DashboardComponent),
+      }]
     }
-]
-}];
+
+];
