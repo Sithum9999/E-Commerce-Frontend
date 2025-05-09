@@ -8,11 +8,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { UserStorageService } from '../storage/user-storage.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatCardModule,MatFormFieldModule,MatInputModule,ReactiveFormsModule,MatIconModule,RouterLink],
+  imports: [MatCardModule,MatFormFieldModule,MatInputModule,ReactiveFormsModule,MatIconModule,RouterLink,NgIf],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
