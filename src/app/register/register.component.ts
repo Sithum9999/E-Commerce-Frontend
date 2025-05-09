@@ -7,12 +7,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '../auth.service';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [MatCardModule,MatFormFieldModule,MatInputModule,ReactiveFormsModule,MatIconModule,CommonModule],
+  imports: [MatCardModule,MatFormFieldModule,MatInputModule,ReactiveFormsModule,MatIconModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
