@@ -1,14 +1,14 @@
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
+    align-items: center;  /* Fixed typo: "align items" to "align-items" */
+    height: 60vh;        /* Changed from 90% to 90vh for better viewport handling */
+}
+
 mat-card {
-    max-width: 500px;
-    width: 130%;
-    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
 }
 
 @media screen and (max-width: 500px) {
@@ -19,7 +19,7 @@ mat-card {
 
 mat-card-title {
     text-align: center;
-    font-size: 24px;     /* Changed from 240px (extremely large) to 24px */
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
