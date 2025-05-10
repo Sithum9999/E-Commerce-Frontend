@@ -30,3 +30,12 @@ button.active {
 .custom-toolbar {
     background-color: #ff0000;
 }
+
+.center-box {
+    margin-top: 5%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; 
+    max-width: 500px; 
+}

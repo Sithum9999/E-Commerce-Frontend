@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { PostCategoryComponent } from './admin/component/post-category/post-category.component';
 
 export const routes: Routes = [{
     path:"",
@@ -31,7 +32,12 @@ export const routes: Routes = [{
         path: "customer/dashboard",
         loadComponent: () =>
           import('./customer/component/dashboard/dashboard.component').then(m => m.DashboardComponent),
-      }]
+      },{
+        path: "admin/category",
+        component: PostCategoryComponent
+      }
+    
+    ]
     }
 
 ];
