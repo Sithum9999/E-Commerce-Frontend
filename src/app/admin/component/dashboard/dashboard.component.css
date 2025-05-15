@@ -59,6 +59,7 @@ input {
 
 .product-info {
   display: flex;
+  margin-left: 4%;
   margin-top: 2%;
   flex-wrap: wrap;
   margin-bottom: 2PX;
