@@ -24,6 +24,12 @@ addProduct(product: any): Observable<any> {
   });
 }
 
+deleteProduct(productId: any): Observable<any> {
+  return this.http.delete(BASIC_URL + `api/admin/product/${productId}`, {
+    headers: this.createAuthorizationHeader(),
+  });
+}
+
 getAllCategories(): Observable<any> {
     return this.http.get(BASIC_URL + 'api/admin', {
       headers: this.createAuthorizationHeader(),
@@ -35,6 +41,12 @@ getAllProducts(): Observable<any> {
       headers: this.createAuthorizationHeader(),
     });
   }
+
+  getAllProductsByName(name: any): Observable<any> {
+  return this.http.get(BASIC_URL+`api/admin/search/${name}`, {
+    headers: this.createAuthorizationHeader(),
+  });
+}
 
 private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set(

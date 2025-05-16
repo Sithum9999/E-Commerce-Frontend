@@ -85,10 +85,10 @@ input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end; /* buttons right-end එකට */
+  justify-content: flex-end;
   gap: 7px;
   margin-top: 10px;
-  width: 100%; /* 👈 මේක වැදගත් — container එක expand කරන්න */
+  width: 100%; 
 }
 
 .actions button {
