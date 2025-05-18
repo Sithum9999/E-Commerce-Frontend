@@ -33,7 +33,7 @@ export class DashboardComponent {
 
     this.isAdminLoggedIn = false;
     this.isCustomerLoggedIn = false;
-    this.router.navigateByUrl("/")
+    this.router.navigateByUrl("/login")
   }
 
 }

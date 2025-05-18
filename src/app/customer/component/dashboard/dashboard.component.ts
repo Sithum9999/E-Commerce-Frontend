@@ -20,42 +20,50 @@ import { RouterLink } from '@angular/router';
 })
 export class DashboardComponent {
 
-    products: any[] = [];
-    searchProductForm: FormGroup;
-  
-    constructor(private customerService: CustomerService, private fb: FormBuilder, private snackBar: MatSnackBar) { }
-  
-    ngOnInit() {
-      this.getAllProducts();
-      this.searchProductForm = this.fb.group({
-        title: [null, [Validators.required]]
-      })
-    }
-  
-    getAllProducts() {
-      this.products = [];
-      this.customerService.getAllProducts().subscribe(res => {
-        res.forEach(element => {
-          element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
-          this.products.push(element);
-        });
-      });
-    }
-  
-    submitForm() {
-      this.products = [];
-      const title = this.searchProductForm.get('title').value;
-      this.customerService.getAllProductsByName(title).subscribe(res => {
-        res.forEach(element => {
-          element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
-          this.products.push(element);
-        });
-      });
-      console.log(this.products);
-    }
+  products: any[] = [];
+  searchProductForm: FormGroup;
 
-    addToCart(id:any){
+  constructor(private customerService: CustomerService, private fb: FormBuilder, private snackBar: MatSnackBar) { }
 
-    }
+  ngOnInit() {
+    this.getAllProducts();
+    this.searchProductForm = this.fb.group({
+      title: [null, [Validators.required]]
+    })
+  }
+
+  getAllProducts() {
+    this.products = [];
+    this.customerService.getAllProducts().subscribe(res => {
+      res.forEach(element => {
+        element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
+        this.products.push(element);
+      });
+    });
+  }
+
+  submitForm() {
+    this.products = [];
+    const title = this.searchProductForm.get('title').value;
+    this.customerService.getAllProductsByName(title).subscribe(res => {
+      res.forEach(element => {
+        element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
+        this.products.push(element);
+      });
+    });
+    console.log(this.products);
+  }
+
+  addToCart(id: any) {
+    this.customerService.addToCart(id).subscribe({
+      next: res => {
+        this.snackBar.open("Product added to cart successfully", "Close", { duration: 5000 });
+      },
+      error: err => {
+        this.snackBar.open("Failed to add product to cart", "Close", { duration: 5000 });
+        console.error("Add to cart error:", err);
+      }
+    });
+  }
 
 }

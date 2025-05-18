@@ -24,6 +24,17 @@ export class CustomerService {
     });
   }
 
+  addToCart(productId: any): Observable<any> {
+    const cart = {
+        productId: productId,
+        userId: UserStorageService.getUserId()
+    };
+
+    return this.http.post(BASIC_URL+'api/customer/cart', cart, {
+        headers: this.createAuthorizationHeader()
+    });
+}
+
   private createAuthorizationHeader(): HttpHeaders {
       return new HttpHeaders().set(
           'Authorization', 'Bearer ' + UserStorageService.getToken()

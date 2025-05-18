@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PostCategoryComponent } from './admin/component/post-category/post-category.component';
 import { PostProductComponent } from './admin/component/post-product/post-product.component';
+import { CartComponent } from './customer/component/cart/cart.component';
 
 export const routes: Routes = [{
     path:"",
@@ -39,6 +40,9 @@ export const routes: Routes = [{
       },{
         path: "admin/product",
         component: PostProductComponent
+      },{
+        path: "customer/cart",
+        component: CartComponent
       }
     
     ]
