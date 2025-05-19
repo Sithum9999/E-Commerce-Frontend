@@ -57,7 +57,6 @@ export class PostProductComponent {
 
 getAllCategories() {
   this.adminService.getAllCategories().subscribe((res) => {
-     console.log('Categories:', res);
     this.listOfCategories = res;
   });
 }
