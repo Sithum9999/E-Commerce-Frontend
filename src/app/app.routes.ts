@@ -5,6 +5,8 @@ import { RegisterComponent } from './register/register.component';
 import { PostCategoryComponent } from './admin/component/post-category/post-category.component';
 import { PostProductComponent } from './admin/component/post-product/post-product.component';
 import { CartComponent } from './customer/component/cart/cart.component';
+import { PostCouponComponent } from './admin/component/post-coupon/post-coupon.component';
+import { CouponsComponent } from './admin/component/coupons/coupons.component';
 
 export const routes: Routes = [{
     path:"",
@@ -43,6 +45,12 @@ export const routes: Routes = [{
       },{
         path: "customer/cart",
         component: CartComponent
+      },{
+        path: "admin/post-coupon",
+        component: PostCouponComponent
+      },{
+        path: "admin/coupons",
+        component: CouponsComponent
       }
     
     ]

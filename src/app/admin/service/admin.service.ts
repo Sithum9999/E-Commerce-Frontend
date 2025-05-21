@@ -10,60 +10,60 @@ const BASIC_URL = "http://localhost:8080/";
 })
 export class AdminService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   addCategory(Category: any): Observable<any> {
     return this.http.post(BASIC_URL + 'api/admin/category', Category, {
-        headers: this.createAuthorizationHeader(),
+      headers: this.createAuthorizationHeader(),
     });
-}
+  }
 
-addProduct(product: any): Observable<any> {
-  return this.http.post(BASIC_URL + 'api/admin/product', product, {
-    headers: this.createAuthorizationHeader(),
-  });
-}
+  addProduct(product: any): Observable<any> {
+    return this.http.post(BASIC_URL + 'api/admin/product', product, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
 
-addCoupon(coupon: any): Observable<any> {
-  return this.http.post(BASIC_URL + 'api/admin/coupons', coupon, {
-    headers: this.createAuthorizationHeader(),
-  });
-}
+  addCoupon(coupon: any): Observable<any> {
+    return this.http.post(BASIC_URL + 'api/admin/coupons', coupon, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
 
 
-deleteProduct(productId: any): Observable<any> {
-  return this.http.delete(BASIC_URL + `api/admin/product/${productId}`, {
-    headers: this.createAuthorizationHeader(),
-  });
-}
+  deleteProduct(productId: any): Observable<any> {
+    return this.http.delete(BASIC_URL + `api/admin/product/${productId}`, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
 
-getCoupons(): Observable<any> {
-  return this.http.get(BASIC_URL + 'api/admin/coupons', {
-    headers: this.createAuthorizationHeader(),
-  });
-}
+  getCoupons(): Observable<any> {
+    return this.http.get(BASIC_URL + 'api/admin/coupons', {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
 
-getAllCategories(): Observable<any> {
+  getAllCategories(): Observable<any> {
     return this.http.get(BASIC_URL + 'api/admin', {
       headers: this.createAuthorizationHeader(),
     });
   }
 
-getAllProducts(): Observable<any> {
+  getAllProducts(): Observable<any> {
     return this.http.get(BASIC_URL + 'api/admin/products', {
       headers: this.createAuthorizationHeader(),
     });
   }
 
   getAllProductsByName(name: any): Observable<any> {
-  return this.http.get(BASIC_URL+`api/admin/search/${name}`, {
-    headers: this.createAuthorizationHeader(),
-  });
-}
+    return this.http.get(BASIC_URL + `api/admin/search/${name}`, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
 
-private createAuthorizationHeader(): HttpHeaders {
+  private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set(
-        'Authorization', 'Bearer ' + UserStorageService.getToken()
+      'Authorization', 'Bearer ' + UserStorageService.getToken()
     );
-}
+  }
 }
