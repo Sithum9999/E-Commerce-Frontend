@@ -64,14 +64,12 @@ export class CartComponent {
   }
 
   increaseQuantity(productId: any) {
-    console.log(productId);
-    
     this.customerService.increaseProductQuantity(productId).subscribe((res: any) => {
       console.log(res);
       
       this.snackbar.open('Product quantity increased.', 'Close', { duration: 5000 });
+      this.getCart();
     });
-    this.getCart();
   }
 
 }
