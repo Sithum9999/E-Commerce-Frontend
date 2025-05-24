@@ -46,6 +46,17 @@ export class CustomerService {
     });
   }
 
+    decreaseProductQuantity(productId: any): Observable<any> {
+    const cart = {
+      productId: productId,
+      userId: UserStorageService.getUserId()
+    };
+
+    return this.http.post(BASIC_URL + 'api/customer/deduction', cart, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
   getCartByUserId(): Observable<any> {
     const userId = UserStorageService.getUserId();
     return this.http.get(BASIC_URL + `api/customer/cart/${userId}`, {
