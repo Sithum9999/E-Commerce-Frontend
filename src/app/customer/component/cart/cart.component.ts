@@ -70,4 +70,11 @@ export class CartComponent {
     });
   }
 
+    decreaseQuantity(productId: any) {
+    this.customerService.decreaseProductQuantity(productId).subscribe((res: any) => {
+      this.snackbar.open('Product quantity decrease.', 'Close', { duration: 5000 });
+      this.getCart();
+    });
+  }
+
 }
