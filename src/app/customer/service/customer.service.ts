@@ -71,9 +71,9 @@ export class CustomerService {
     })
   }
 
-  placeOrder(order: any): Observable<any> {
-  order.userId = UserStorageService.getUserId()
-  return this.http.post(BASIC_URL + '/api/customer/placeOrder', order, {
+  placeOrder(Order: any): Observable<any> {
+  Order.userId = UserStorageService.getUserId()
+  return this.http.post(BASIC_URL + 'api/customer/placeOrder', Order, {
     headers: this.createAuthorizationHeader(),
   })
 }

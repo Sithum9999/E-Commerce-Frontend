@@ -45,7 +45,7 @@ export class CartComponent {
       });
       this.getCart();
     }, error => {
-      this.snackbar.open(error.error, 'Close', {
+      this.snackbar.open("Coupon Already Used!", 'Close', {
         duration: 5000
       });
     });
