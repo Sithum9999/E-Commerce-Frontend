@@ -43,6 +43,12 @@ export class AdminService {
     });
   }
 
+  getPlacedOrders(): Observable<any> {
+    return this.http.get(BASIC_URL + 'api/admin/placedOrders', {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
   getAllCategories(): Observable<any> {
     return this.http.get(BASIC_URL + 'api/admin', {
       headers: this.createAuthorizationHeader(),
