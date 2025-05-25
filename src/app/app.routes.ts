@@ -7,6 +7,7 @@ import { PostProductComponent } from './admin/component/post-product/post-produc
 import { CartComponent } from './customer/component/cart/cart.component';
 import { PostCouponComponent } from './admin/component/post-coupon/post-coupon.component';
 import { CouponsComponent } from './admin/component/coupons/coupons.component';
+import { OrdersComponent } from './admin/component/orders/orders.component';
 
 export const routes: Routes = [{
     path:"",
@@ -51,6 +52,9 @@ export const routes: Routes = [{
       },{
         path: "admin/coupons",
         component: CouponsComponent
+      },{
+        path: "admin/orders",
+        component: OrdersComponent
       }
     
     ]
