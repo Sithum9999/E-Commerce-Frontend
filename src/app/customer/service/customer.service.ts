@@ -71,6 +71,13 @@ export class CustomerService {
     })
   }
 
+  placeOrder(order: any): Observable<any> {
+  order.userId = UserStorageService.getUserId()
+  return this.http.post(BASIC_URL + '/api/customer/placeOrder', order, {
+    headers: this.createAuthorizationHeader(),
+  })
+}
+
   private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + UserStorageService.getToken()

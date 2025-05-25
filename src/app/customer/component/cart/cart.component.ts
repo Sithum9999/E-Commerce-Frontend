@@ -7,6 +7,7 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { PlaceOrderComponent } from '../place-order/place-order.component';
 
 @Component({
   selector: 'app-cart',
@@ -75,6 +76,10 @@ export class CartComponent {
       this.snackbar.open('Product quantity decrease.', 'Close', { duration: 5000 });
       this.getCart();
     });
+  }
+
+  placeOrder(){
+    this.dialog.open(PlaceOrderComponent);
   }
 
 }
