@@ -7,11 +7,12 @@ import { CustomerService } from '../../service/customer.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-place-order',
   standalone: true,
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatButtonModule, MatCardModule],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatButtonModule, MatCardModule, NgIf],
   templateUrl: './place-order.component.html',
   styleUrl: './place-order.component.css'
 })
