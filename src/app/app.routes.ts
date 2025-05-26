@@ -8,6 +8,7 @@ import { CartComponent } from './customer/component/cart/cart.component';
 import { PostCouponComponent } from './admin/component/post-coupon/post-coupon.component';
 import { CouponsComponent } from './admin/component/coupons/coupons.component';
 import { OrdersComponent } from './admin/component/orders/orders.component';
+import { MyOrdersComponent } from './customer/component/my-orders/my-orders.component';
 
 export const routes: Routes = [{
     path:"",
@@ -55,6 +56,9 @@ export const routes: Routes = [{
       },{
         path: "admin/orders",
         component: OrdersComponent
+      },{
+        path: "customer/my_orders",
+        component: MyOrdersComponent
       }
     
     ]
