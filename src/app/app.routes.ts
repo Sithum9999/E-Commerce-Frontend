@@ -61,7 +61,7 @@ export const routes: Routes = [{
         path: "customer/my_orders",
         component: MyOrdersComponent
       },{
-        path: "admin/faq/productId",
+        path: "admin/faq/:productId",
         component:PostProductFaqComponent
       }
     
