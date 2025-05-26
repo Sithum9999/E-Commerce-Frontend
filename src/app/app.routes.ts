@@ -9,6 +9,7 @@ import { PostCouponComponent } from './admin/component/post-coupon/post-coupon.c
 import { CouponsComponent } from './admin/component/coupons/coupons.component';
 import { OrdersComponent } from './admin/component/orders/orders.component';
 import { MyOrdersComponent } from './customer/component/my-orders/my-orders.component';
+import { PostProductFaqComponent } from './admin/component/post-product-faq/post-product-faq.component';
 
 export const routes: Routes = [{
     path:"",
@@ -59,6 +60,9 @@ export const routes: Routes = [{
       },{
         path: "customer/my_orders",
         component: MyOrdersComponent
+      },{
+        path: "admin/faq/productId",
+        component:PostProductFaqComponent
       }
     
     ]
