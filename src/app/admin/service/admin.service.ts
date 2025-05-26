@@ -55,6 +55,12 @@ export class AdminService {
   });
 }
 
+  postFAQ(productId: number, faq: any): Observable<any> {
+  return this.http.post(BASIC_URL + `api/admin/faq/${productId}`, faq, {
+    headers: this.createAuthorizationHeader(),
+  });
+}
+
   getAllCategories(): Observable<any> {
     return this.http.get(BASIC_URL + 'api/admin', {
       headers: this.createAuthorizationHeader(),
