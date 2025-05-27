@@ -24,6 +24,12 @@ export class AdminService {
     });
   }
 
+  updateProduct(productId: any, product: any): Observable<any> {
+    return this.http.put(BASIC_URL + `api/admin/product/${productId}`, product, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
   addCoupon(coupon: any): Observable<any> {
     return this.http.post(BASIC_URL + 'api/admin/coupons', coupon, {
       headers: this.createAuthorizationHeader(),
@@ -50,16 +56,16 @@ export class AdminService {
   }
 
   changeOrderStatus(orderId: number, status: string): Observable<any> {
-  return this.http.get(BASIC_URL + `api/admin/order/${orderId}/${status}`, {
-    headers: this.createAuthorizationHeader(),
-  });
-}
+    return this.http.get(BASIC_URL + `api/admin/order/${orderId}/${status}`, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
 
   postFAQ(productId: number, faq: any): Observable<any> {
-  return this.http.post(BASIC_URL + `api/admin/faq/${productId}`, faq, {
-    headers: this.createAuthorizationHeader(),
-  });
-}
+    return this.http.post(BASIC_URL + `api/admin/faq/${productId}`, faq, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
 
   getAllCategories(): Observable<any> {
     return this.http.get(BASIC_URL + 'api/admin', {
@@ -69,6 +75,12 @@ export class AdminService {
 
   getAllProducts(): Observable<any> {
     return this.http.get(BASIC_URL + 'api/admin/products', {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
+  getProductById(productId: string): Observable<any> {
+    return this.http.get(BASIC_URL + `api/admin/product/${productId}`, {
       headers: this.createAuthorizationHeader(),
     });
   }

@@ -10,6 +10,7 @@ import { CouponsComponent } from './admin/component/coupons/coupons.component';
 import { OrdersComponent } from './admin/component/orders/orders.component';
 import { MyOrdersComponent } from './customer/component/my-orders/my-orders.component';
 import { PostProductFaqComponent } from './admin/component/post-product-faq/post-product-faq.component';
+import { UpdateProductComponent } from './admin/component/update-product/update-product.component';
 
 export const routes: Routes = [{
     path:"",
@@ -63,6 +64,9 @@ export const routes: Routes = [{
       },{
         path: "admin/faq/:productId",
         component:PostProductFaqComponent
+      },{
+        path: "admin/product/:productId",
+        component: UpdateProductComponent
       }
     
     ]
