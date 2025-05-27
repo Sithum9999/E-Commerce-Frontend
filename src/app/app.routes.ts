@@ -11,6 +11,8 @@ import { OrdersComponent } from './admin/component/orders/orders.component';
 import { MyOrdersComponent } from './customer/component/my-orders/my-orders.component';
 import { PostProductFaqComponent } from './admin/component/post-product-faq/post-product-faq.component';
 import { UpdateProductComponent } from './admin/component/update-product/update-product.component';
+import { ViewOrderedProductsComponent } from './customer/component/view-ordered-products/view-ordered-products.component';
+import { ReviewOrderedProductsComponent } from './customer/component/review-ordered-products/review-ordered-products.component';
 
 export const routes: Routes = [{
     path:"",
@@ -67,6 +69,12 @@ export const routes: Routes = [{
       },{
         path: "admin/product/:productId",
         component: UpdateProductComponent
+      },{
+        path: "customer/ordered_products/:orderId",
+        component: ViewOrderedProductsComponent
+      },{
+        path: "customer/review/:productId",
+        component: ReviewOrderedProductsComponent
       }
     
     ]
