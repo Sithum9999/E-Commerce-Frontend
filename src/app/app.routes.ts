@@ -15,6 +15,7 @@ import { ViewOrderedProductsComponent } from './customer/component/view-ordered-
 import { ReviewOrderedProductsComponent } from './customer/component/review-ordered-products/review-ordered-products.component';
 import { ViewProductDetailComponent } from './customer/component/view-product-detail/view-product-detail.component';
 import { ViewWishlistComponent } from './customer/component/view-wishlist/view-wishlist.component';
+import { TrackOrderComponent } from './track-order/track-order.component';
 
 export const routes: Routes = [{
   path: "",
@@ -29,7 +30,7 @@ export const routes: Routes = [{
   },
   {
     path: "order",
-    component: RegisterComponent
+    component: TrackOrderComponent
   }]
 },
 {

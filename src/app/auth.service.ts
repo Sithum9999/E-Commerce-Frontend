@@ -13,7 +13,7 @@ export class AuthService {
     constructor(
         private http: HttpClient,
         private userStorageService: UserStorageService
-    ) {}
+    ) { }
 
     register(signupRequest: any): Observable<any> {
         return this.http.post(BASIC_URL + "sign-up", signupRequest);
@@ -22,12 +22,12 @@ export class AuthService {
     login(username: string, password: string): Observable<boolean> {
         const headers = new HttpHeaders().set('Content-Type', 'application/json');
         const body = { username, password };
-        
+
         return this.http.post(BASIC_URL + 'authenticate', body, { headers, observe: 'response' }).pipe(
             map((res) => {
                 const token = res.headers.get('authorization')?.substring(7);
                 const user = res.body;
-                
+
                 if (token && user) {
                     this.userStorageService.saveToken(token);
                     this.userStorageService.saveUser(user);
@@ -40,5 +40,9 @@ export class AuthService {
                 return of(false);
             })
         );
+    }
+
+    getOrderByTrackingId(trackingId: number): Observable<any> {
+        return this.http.get(BASIC_URL + `order/${trackingId}`);
     }
 }
