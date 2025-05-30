@@ -16,6 +16,7 @@ import { ReviewOrderedProductsComponent } from './customer/component/review-orde
 import { ViewProductDetailComponent } from './customer/component/view-product-detail/view-product-detail.component';
 import { ViewWishlistComponent } from './customer/component/view-wishlist/view-wishlist.component';
 import { TrackOrderComponent } from './track-order/track-order.component';
+import { AnalyticsComponent } from './admin/component/analytics/analytics.component';
 
 export const routes: Routes = [{
   path: "",
@@ -84,6 +85,9 @@ export const routes: Routes = [{
     }, {
       path: "customer/wishlist",
       component: ViewWishlistComponent
+    }, {
+      path: "admin/analytics",
+      component: AnalyticsComponent
     }
 
   ]
