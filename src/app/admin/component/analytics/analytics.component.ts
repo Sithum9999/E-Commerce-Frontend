@@ -7,7 +7,7 @@ import { OrderByStatusComponent } from './order-by-status/order-by-status.compon
 @Component({
   selector: 'app-analytics',
   standalone: true,
-  imports: [MatCardModule, CommonModule,],
+  imports: [MatCardModule, CommonModule, OrderByStatusComponent],
   templateUrl: './analytics.component.html',
   styleUrl: './analytics.component.css'
 })
