@@ -109,6 +109,13 @@ addProductToWishlist(Wishlist: any): Observable<any> {
   });
 }
 
+getWishlistByUserId(): Observable<any> {
+  const userId = UserStorageService.getUserId();
+  return this.http.get(BASIC_URL + `api/customer/wishlist/${userId}`, {
+    headers: this.createAuthorizationHeader(),
+  });
+}
+
   private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + UserStorageService.getToken()
