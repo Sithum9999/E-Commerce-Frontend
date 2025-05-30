@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'customer-dashboard',
   standalone: true,
-  imports: [MatCard, MatDividerModule, NgFor, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, ReactiveFormsModule],
+  imports: [MatCard, MatDividerModule, NgFor, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, ReactiveFormsModule, RouterLink],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

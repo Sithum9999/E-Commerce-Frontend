@@ -13,6 +13,7 @@ import { PostProductFaqComponent } from './admin/component/post-product-faq/post
 import { UpdateProductComponent } from './admin/component/update-product/update-product.component';
 import { ViewOrderedProductsComponent } from './customer/component/view-ordered-products/view-ordered-products.component';
 import { ReviewOrderedProductsComponent } from './customer/component/review-ordered-products/review-ordered-products.component';
+import { ViewProductDetailComponent } from './customer/component/view-product-detail/view-product-detail.component';
 
 export const routes: Routes = [{
     path:"",
@@ -75,6 +76,9 @@ export const routes: Routes = [{
       },{
         path: "customer/review/:productId",
         component: ReviewOrderedProductsComponent
+      },{
+        path: "customer/product/:productId",
+        component: ViewProductDetailComponent
       }
     
     ]
