@@ -3,11 +3,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { CustomerService } from '../../service/customer.service';
 import { CommonModule } from '@angular/common';
+import { UserStorageService } from '../../../storage/user-storage.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-view-product-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './view-product-detail.component.html',
   styleUrl: './view-product-detail.component.css'
 })
@@ -41,5 +43,24 @@ export class ViewProductDetailComponent {
       });
     });
   }
+
+  addToWishlist() {
+  const wishListDto = {
+    productId: this.productId,
+    userId: UserStorageService.getUserId()
+  };
+
+  this.customerService.addProductToWishlist(wishListDto).subscribe(res => {
+    if (res.id != null) {
+      this.snackBar.open('Product Added to Wishlist Successfully!', 'close', {
+        duration: 5000
+      });
+    } else {
+      this.snackBar.open("Already in Wishlist", 'ERROR', {
+        duration: 5000
+      });
+    }
+  });
+}
 
 }

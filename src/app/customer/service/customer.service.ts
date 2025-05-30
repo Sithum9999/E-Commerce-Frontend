@@ -103,6 +103,12 @@ getProductDetailById(productId: number): Observable<any> {
   });
 } 
 
+addProductToWishlist(Wishlist: any): Observable<any> {
+  return this.http.post(BASIC_URL + 'api/customer/wishlist', Wishlist, {
+    headers: this.createAuthorizationHeader(),
+  });
+}
+
   private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + UserStorageService.getToken()
